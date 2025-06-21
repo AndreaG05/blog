@@ -39,23 +39,23 @@
     </div>
 </div>
 <nav class="nav-grid">
-    <a href="{{ get_url(path="posts") }}" class="nav-item">
+    <a href="{{ get_url(path="posts/") }}" class="nav-item">
         <span class="path">./posts/</span>
         <h2>Blog Posts</h2>
         <p>Technical articles, tutorials, and thoughts on development, security, and technology.</p>
     </a>
-    <a href="{{ get_url(path="writeup") }}" class="nav-item">
+    <a href="{{ get_url(path="writeup/") }}" class="nav-item">
         <span class="path">./writeup/</span>
         <h2>Security Writeups</h2>
         <p>Detailed analysis of CTF challenges, vulnerability research, and penetration testing.</p>
     </a>
-    <a href="{{ get_url(path="certifications") }}" class="nav-item">
+    <a href="{{ get_url(path="certifications/") }}" class="nav-item">
         <span class="path">./certifications/</span>
         <h2>Certifications</h2>
         <p>Professional certifications and continuous learning journey in cybersecurity.</p>
     </a>
-    <a href="{{ get_url(path="about") }}" class="nav-item">
-        <span class="path">./about</span>
+    <a href="{{ get_url(path="about/") }}" class="nav-item">
+        <span class="path">./about/</span>
         <h2>About</h2>
         <p>Background, experience, interests, and what drives my passion for technology.</p>
     </a>
@@ -76,7 +76,7 @@
 <div class="code-block">
     <div><span class="syntax-comment">// Quick navigation</span></div>
     <div><span class="syntax-keyword">const</span> <span class="syntax-function">navigate</span> = (path) => {</div>
-    <div>  window.location.href = <span class="syntax-string">`/blog/${path}`</span>;</div>
+    <div>  window.location.href = <span class="syntax-string">`/blog/${path}/`</span>;</div>
     <div>};</div>
 </div>
 {% endblock content %}
