@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header class="hero">
+    <div class="terminal-header">
+        <div class="terminal-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+        </div>
+        <div class="terminal-title">bash</div>
+    </div>
+    <div class="terminal-content">
+        <div><span class="prompt">[0x41ndrea@arch ~]$</span> <span class="command"> whoami</span></div>
+        <div>{{ config.author | default(value="Security Researcher & Developer") }}</div>
+        <div><span class="prompt">[0x41ndrea@arch ~]$</span> <span class="command"> ls -la blog/</span></div>
+        <div class="hero-subtitle">drwxr-xr-x  posts/ writeups/ certifications/ about/</div>
+    </div>
+</header>
+
+<div class="stats">
+    {% set posts = get_section(path="posts/_index.md") %}
+    {% set writeups = get_section(path="writeup/_index.md") %}
+    {% set certs = get_section(path="certifications/_index.md") %}
+    
+    <div class="stat-item">
+        <span class="stat-number">{{ posts.pages | length }}</span>
+        <span class="stat-label">Posts</span>
+    </div>
+    <div class="stat-item">
+        <span class="stat-number">{{ writeups.pages | length }}</span>
+        <span class="stat-label">Writeups</span>
+    </div>
+    <div class="stat-item">
+        <span class="stat-number">{{ certs.pages | length }}</span>
+        <span class="stat-label">Certs</span>
+    </div>
+    <div class="stat-item">
+        <span class="stat-number">{{ posts.pages | length + writeups.pages | length + certs.pages | length }}</span>
+        <span class="stat-label">Total</span>
+    </div>
+</div>
+
+<nav class="nav-grid">
+    <a href="/posts" class="nav-item">
+        <span class="path">./posts/</span>
+        <h2>Blog Posts</h2>
+        <p>Technical articles, tutorials, and thoughts on development, security, and technology.</p>
+    </a>
+
+    <a href="/writeup" class="nav-item">
+        <span class="path">./writeup/</span>
+        <h2>Security Writeups</h2>
+        <p>Detailed analysis of CTF challenges, vulnerability research, and penetration testing.</p>
+    </a>
+
+    <a href="/certifications" class="nav-item">
+        <span class="path">./certifications/</span>
+        <h2>Certifications</h2>
+        <p>Professional certifications and continuous learning journey in cybersecurity.</p>
+    </a>
+
+    <a href="/about" class="nav-item">
+        <span class="path">./about</span>
+        <h2>About</h2>
+        <p>Background, experience, interests, and what drives my passion for technology.</p>
+    </a>
+</nav>
+
+{% if posts.pages %}
+<div class="recent-section">
+    <div class="section-header">Recent Posts</div>
+    <div class="post-list">
+        {% for post in posts.pages | slice(end=5) %}
+        <div class="post-item">
+            <a href="{{ post.permalink }}" class="post-title">{{ post.title | default(value=post.slug) }}.md</a>
+            <span class="post-date">{{ post.date | date(format="%Y-%m-%d") }}</span>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<div class="code-block">
+    <div><span class="syntax-comment">// Quick navigation</span></div>
+    <div><span class="syntax-keyword">const</span> <span class="syntax-function">navigate</span> = (path) => {</div>
+    <div>  window.location.href = <span class="syntax-string">`/${path}`</span>;</div>
+    <div>};</div>
+</div>
+{% endblock content %}

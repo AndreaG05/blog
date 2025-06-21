@@ -1,0 +1,10 @@
+<nav class="main-nav">
+    <div class="nav-brand">
+        <a href="/">{{ config.title }}</a>
+    </div>
+    <div class="nav-links">
+        {% for item in config.extra.menu %}
+        <a href="{{ item.url }}" class="nav-link">{{ item.name }}</a>
+        {% endfor %}
+    </div>
+</nav>

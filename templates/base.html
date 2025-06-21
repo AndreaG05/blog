@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ config.title }}</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}">
+    <link rel="stylesheet" href="{{ get_url(path='css/style.css') }}">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path='feed.xml') }}">
+</head>
+<body>
+    <div class="container">
+        {% include "partials/header.html" %}
+        
+        <main>
+            {% block content %}{% endblock content %}
+        </main>
+        
+        {% include "partials/footer.html" %}
+    </div>
+</body>
+</html>

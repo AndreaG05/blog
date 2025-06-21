@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header class="section-hero">
+    <div class="terminal-header">
+        <div class="terminal-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+        </div>
+        <div class="terminal-title">{{ section.title | default(value=section.path | split(pat="/") | last) }}</div>
+    </div>
+    <div class="terminal-content">
+        <div><span class="prompt">[0x41ndrea@arch blog]$</span> <span class="command"> ls {{ section.path | split(pat="/") | last }}/</span></div>
+        {% if section.description %}
+        <div class="section-description">{{ section.description }}</div>
+        {% endif %}
+    </div>
+</header>
+
+{% if section.pages %}
+<div class="posts-grid">
+    {% for page in section.pages %}
+    <article class="post-card">
+        <div class="post-header">
+            <h2><a href="{{ page.permalink }}">{{ page.title | default(value=page.slug) }}</a></h2>
+            <span class="post-meta">{{ page.date | date(format="%Y-%m-%d") }}</span>
+        </div>
+        {% if page.description %}
+        <p class="post-excerpt">{{ page.description }}</p>
+        {% endif %}
+        <div class="post-footer">
+            <span class="file-path">./{{ section.path | split(pat="/") | last }}/{{ page.slug }}.md</span>
+            {% if page.reading_time %}
+            <span class="reading-time">{{ page.reading_time }}min read</span>
+            {% endif %}
+        </div>
+    </article>
+    {% endfor %}
+</div>
+{% else %}
+<div class="empty-state">
+    <div class="code-block">
+        <div><span class="syntax-comment">// No content found</span></div>
+        <div><span class="syntax-keyword">if</span> (files.length === <span class="syntax-string">0</span>) {</div>
+        <div>  console.log(<span class="syntax-string">"Directory is empty"</span>);</div>
+        <div>}</div>
+    </div>
+</div>
+{% endif %}
+{% endblock content %}
