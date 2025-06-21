@@ -25,7 +25,7 @@ I recently achieved the **eLearnSecurity Certified Professional Penetration Test
 <br><br>
 
 <div style="text-align: center;">
-    <img src="/images/ecppt.png" alt="CPTS Certification" style="max-width: 700px;">
+    <img src="blog/images/ecppt.png" alt="CPTS Certification" style="max-width: 700px;">
 </div>
 
 ## Introduction {#introduction}
