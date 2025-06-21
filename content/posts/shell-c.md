@@ -47,7 +47,7 @@ After spending weeks developing and refining a shell implementation in C, I want
 <br><br>
 
 <div style="text-align: center;">
-    <img src="/images/diagram.png" alt="Shell Architecture Diagram" style="max-width: 700px;">
+    <img src="/blog/content/images/diagram.png" alt="Shell Architecture Diagram" style="max-width: 700px;">
 </div>
 
 ## Introduction {#introduction}
