@@ -5,7 +5,6 @@ author = "Andrea Gelmi"
 compile_sass = true
 minify_html = true
 generate_feeds = false
-# feed_filenames = ["feed.xml"]
 
 [markdown]
 highlight_code = true
@@ -18,28 +17,27 @@ smart_punctuation = true
 unsafe = true
 
 [extra]
-github = "https://github.com/ElliotAlderson003"
+github = "https://github.com/AndreaG05"
 linkedin = "https://www.linkedin.com/in/andrea-gelmi-727590317/"
-email = "gelmi.andrea05@gmail.com@email.com"
+email = "andre.infosec@gmail.com"
 
 # Menu principale
 [[extra.menu]]
 name = "Posts"
-url = "/posts/"
+url = "/blog/posts/"
 weight = 1
 
 [[extra.menu]]
 name = "Writeups"
-url = "/writeup/"
+url = "/blog/writeup/"
 weight = 2
 
 [[extra.menu]]
 name = "Certifications"
-url = "/certifications/"
+url = "/blog/certifications/"
 weight = 3
 
 [[extra.menu]]
 name = "About"
-url = "/about/"
+url = "/blog/about/"
 weight = 4
-Last update: Sat Jun 21 11:57:43 AM CEST 2025
