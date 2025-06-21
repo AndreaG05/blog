@@ -29,7 +29,7 @@ I recently achieved the HTB Certified Penetration Testing Specialist (CPTS) cert
 <br><br>
 
 <div style="text-align: center;">
-    <img src="blog/images/cpts.png" alt="CPTS Certification" style="max-width: 700px;">
+    <img src="/blog/images/cpts.png" alt="CPTS Certification" style="max-width: 700px;">
 </div>
 
 ## Introduction {#introduction}

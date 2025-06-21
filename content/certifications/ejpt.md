@@ -27,7 +27,7 @@ description = "A comprehensive guide to the eJPT certification - the perfect ent
 
 I recently passed the eLearnSecurity Junior Penetration Tester (eJPT) certification, and I believe it's one of the most accessible and well-structured entry points into the world of penetration testing. Unlike more advanced certifications, the eJPT focuses on building solid fundamentals without overwhelming beginners with complex scenarios.
 <br><br><br>
-<img src="blog/images/ejpt.png" alt="eJPT Certification" style="display: block; margin: 0 auto;" />
+<img src="/blog/images/ejpt.png" alt="eJPT Certification" style="display: block; margin: 0 auto;" />
 
 ## Introduction {#introduction}
 
